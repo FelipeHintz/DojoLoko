@@ -1,0 +1,20 @@
+﻿@model DojoLoko.Models.Aluno
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>@Model.Nome</h2>
+    <p>Informações do aluno:</p>
+    <div class="row">
+        <div class="col-sm-12">
+            <p><span style="color: #317eac;">ID:</span> @Model.ID</p>
+            <p><span style="color: #317eac;">Nome:</span> @Model.Nome</p>
+            <p><span style="color: #317eac;">Descrição:</span> @Model.CPF</p>
+            <p><span style="color: #317eac;">Faixa:</span> @Model.Faixa.Nome</p>
+            <p><span style="color: #317eac;">Tipo de associação:</span> @Model.TipoDeAssociacao.Nome</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DojoLoko.Models.TipoDeAssociacao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Associação</h2></center>
+
+@if (@Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>FaixaAssociacao</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var ass in Model)
+            {
+                <tr><td>@Html.ActionLink(@ass.Nome, "Detalhes", new { ass.ID })</td></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não temos nenhum aluno cadastrado</p>
+}

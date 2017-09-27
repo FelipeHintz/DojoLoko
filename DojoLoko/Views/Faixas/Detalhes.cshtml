@@ -1,0 +1,18 @@
+﻿@model DojoLoko.Models.Faixa
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>@Model.Nome</h2>
+    <p>Informações da faixa:</p>
+    <div class="row">
+        <div class="col-sm-12">
+            <p><span style="color: #317eac;">ID:</span> @Model.ID</p>
+            <p><span style="color: #317eac;">Nome:</span> @Model.Nome</p>
+            <p><span style="color: #317eac;">Descrição:</span> @Model.Grau</p>
+        </div>
+    </div>
+</div>
