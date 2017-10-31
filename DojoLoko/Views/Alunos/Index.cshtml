@@ -11,15 +11,22 @@
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr><th>Cliente</th></tr>
+            <tr>
+                <th>Cliente</th>
+                <th>Editar</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (var aluno in Model)
             {
-                <tr><td>@Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })</td></tr>
+                <tr>
+                    <td>@Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })</td>
+                    <td><a class="btn" href="/Alunos/Editar/@aluno.ID">Editar</a></td>
+                </tr>
             }
         </tbody>
-    </table>
+</table>
+@Html.ActionLink("Novo aluno", "Novo", null, new { @class = "btn btn-primary"})
 }
 else
 {

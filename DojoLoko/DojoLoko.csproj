@@ -206,7 +206,8 @@
     <Compile Include="Models\TipoDeAssociacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\AlunoIndexViewModel.cs" />
+    <Compile Include="ViewModels\AlunoIndexViewModel - Copy.cs" />
+    <Compile Include="ViewModels\AlunoEditarViewModel.cs" />
     <Compile Include="ViewModels\TipodeAssociacaoViewModel.cs" />
     <Compile Include="ViewModels\FaixaIndexViewModel.cs" />
   </ItemGroup>
@@ -262,6 +263,7 @@
     <Content Include="Views\Alunos\Detalhes.cshtml" />
     <Content Include="Views\Faixas\Detalhes.cshtml" />
     <Content Include="Views\TipoDeAssociacoes\Detalhes.cshtml" />
+    <Content Include="Views\Alunos\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
