@@ -9,5 +9,6 @@ namespace DojoLoko.ViewModels
     public class AlunoIndexViewModel
     {
         public List<Aluno> Alunos { get; set; }
+
     }
 }

@@ -9,19 +9,20 @@
 
 @if (@Model.Any())
 {
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Cliente</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
+    <table class="table table-bordered table-hover text-center">
         <tbody>
             @foreach (var aluno in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })</td>
-                    <td><a class="btn" href="/Alunos/Editar/@aluno.ID">Editar</a></td>
+                    <td>
+                        <span class="col-md-1"></span>
+                        <span class="col-md-6">@Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })</span>
+                        <span class="col-md-1"></span>
+                        <a class="btn btn-warning col-md-1" href="/Alunos/Editar/@aluno.ID">Editar</a>
+                        <span class="col-md-1"></span>
+                        <a class="btn btn-danger col-md-1" href="/Alunos/Deletar/@aluno.ID">Deletar</a>
+                        <span class="col-md-1"></span>
+</td>
                 </tr>
             }
         </tbody>
@@ -31,4 +32,7 @@
 else
 {
     <p>Não temos nenhum aluno cadastrado</p>
+    <br />
+    <br />
+    @Html.ActionLink("Cadastrar", "Novo", null, new { @class = "btn btn-primary"})
 }

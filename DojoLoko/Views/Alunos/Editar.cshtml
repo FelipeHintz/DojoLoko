@@ -10,10 +10,12 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Aluno.Nome)
         @Html.TextBoxFor(m => m.Aluno.Nome, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Aluno.Nome)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Aluno.CPF)
         @Html.TextBoxFor(m => m.Aluno.CPF, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Aluno.CPF)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Aluno.Faixa)

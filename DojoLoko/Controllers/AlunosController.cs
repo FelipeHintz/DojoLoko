@@ -75,7 +75,8 @@ namespace DojoLoko.Controllers
         [HttpPost] // só será acessada com POST
         public ActionResult Salvar(Aluno aluno) // recebemos um cliente
         {
-            if (!ModelState.IsValid)
+
+            /*if (!ModelState.IsValid)
             {
                 var viewModel = new AlunoEditarViewModel
                 {
@@ -85,7 +86,7 @@ namespace DojoLoko.Controllers
                 };
 
                 return View("Editar", viewModel);
-            }
+            }*/
 
             if (aluno.ID == 0)
                 _context.Aluno.Add(aluno);
