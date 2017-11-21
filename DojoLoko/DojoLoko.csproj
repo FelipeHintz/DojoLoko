@@ -200,6 +200,18 @@
     <Compile Include="Migrations\201709270009231_corrigindoOsParanaue3.Designer.cs">
       <DependentUpon>201709270009231_corrigindoOsParanaue3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711212138238_Bagulho da validação.cs" />
+    <Compile Include="Migrations\201711212138238_Bagulho da validação.Designer.cs">
+      <DependentUpon>201711212138238_Bagulho da validação.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212202195_Bagulho da validação 2.cs" />
+    <Compile Include="Migrations\201711212202195_Bagulho da validação 2.Designer.cs">
+      <DependentUpon>201711212202195_Bagulho da validação 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212236199_Bagulho da validação 3.cs" />
+    <Compile Include="Migrations\201711212236199_Bagulho da validação 3.Designer.cs">
+      <DependentUpon>201711212236199_Bagulho da validação 3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -301,6 +313,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709270009231_corrigindoOsParanaue3.resx">
       <DependentUpon>201709270009231_corrigindoOsParanaue3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212138238_Bagulho da validação.resx">
+      <DependentUpon>201711212138238_Bagulho da validação.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212202195_Bagulho da validação 2.resx">
+      <DependentUpon>201711212202195_Bagulho da validação 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212236199_Bagulho da validação 3.resx">
+      <DependentUpon>201711212236199_Bagulho da validação 3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

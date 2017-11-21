@@ -20,10 +20,12 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Aluno.Faixa)
         @Html.DropDownListFor(m => m.Aluno.FaixaId, new SelectList(Model.Faixa, "ID", "Nome"), "Selecione uma faixa", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aluno.FaixaId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Aluno.TipoDeAssociacao)
         @Html.DropDownListFor(m => m.Aluno.TipodeAssociacaoId, new SelectList(Model.TipoDeAssociacao, "ID", "Nome"), "Selecione um tipo de associação", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aluno.TipodeAssociacaoId)
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 }
