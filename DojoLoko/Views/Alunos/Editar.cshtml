@@ -18,6 +18,16 @@
 		@Html.ValidationMessageFor(m => m.Aluno.CPF)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.Aluno.Email)
+        @Html.TextBoxFor(m => m.Aluno.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aluno.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Aluno.Senha)
+        @Html.TextBoxFor(m => m.Aluno.Senha, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aluno.Senha)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.Aluno.Faixa)
         @Html.DropDownListFor(m => m.Aluno.FaixaId, new SelectList(Model.Faixa, "ID", "Nome"), "Selecione uma faixa", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Aluno.FaixaId)

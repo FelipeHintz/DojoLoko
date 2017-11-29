@@ -26,5 +26,13 @@ namespace DojoLoko.Models
         [StringLength(255)]
         [Display(Name = "CPF")]
         public string CPF { get; set; }
+        [Required]
+        [StringLength(255)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required]
+        [StringLength(255)]
+        [Display(Name = "Senha")]
+        public string Senha { get; set; }
     }
 }

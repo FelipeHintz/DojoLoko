@@ -9,25 +9,28 @@
 
 @if (@Model.Any())
 {
-    <table class="table table-bordered table-hover text-center">
+    <table class="table table-hover">
         <tbody>
             @foreach (var aluno in Model)
             {
-                <tr>
-                    <td>
-                        <span class="col-md-1"></span>
-                        <span class="col-md-6">@Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })</span>
-                        <span class="col-md-1"></span>
-                        <a class="btn btn-warning col-md-1" href="/Alunos/Editar/@aluno.ID">Editar</a>
-                        <span class="col-md-1"></span>
-                        <a class="btn btn-danger col-md-1" href="/Alunos/Deletar/@aluno.ID">Deletar</a>
-                        <span class="col-md-1"></span>
-</td>
-                </tr>
+               <tr>
+                   <td style="vertical-align: middle;">
+                        @Html.ActionLink(@aluno.Nome, "Detalhes", new { aluno.ID })
+                   </td>
+                   <td style="vertical-align: middle;">
+                       @Html.ActionLink(@aluno.Faixa.Nome, "Detalhes", new { aluno.ID })
+                   </td>
+                   <td class="col-md-2" style="vertical-align: middle;">
+                       <a class="btn btn-primary" href="/Alunos/Editar/@aluno.ID" style="width: 100%">Editar</a>
+                   </td>
+                   <td class="col-md-2" style="vertical-align: middle;">
+                       <a class="btn btn-primary" href="/Alunos/Deletar/@aluno.ID" style="width: 100%">Deletar</a>
+                   </td>
+               </tr>                    
             }
-        </tbody>
-</table>
-@Html.ActionLink("Novo aluno", "Novo", null, new { @class = "btn btn-primary"})
+            </tbody>
+    </table>
+    @Html.ActionLink("Novo aluno", "Novo", null, new { @class = "btn btn-primary"})
 }
 else
 {

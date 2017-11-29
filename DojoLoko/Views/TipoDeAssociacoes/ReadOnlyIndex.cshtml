@@ -1,0 +1,34 @@
+﻿@model IEnumerable<DojoLoko.Models.TipoDeAssociacao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Associações</h2></center>
+
+@if (@Model.Any())
+{
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var associacao in Model)
+            {
+                <tr>
+                    <td style="vertical-align: middle;">
+                        @associacao.Nome
+                    </td>
+                    <td style="vertical-align: middle;">
+                        @associacao.Periodo
+                    </td>
+                    <td style="vertical-align: middle;">
+                        @associacao.Mensalidade
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não temos nenhuma faixa cadastrada</p>
+}

@@ -1,0 +1,21 @@
+﻿@model DojoLoko.ViewModels.FaixasEditarViewModel
+@{
+    ViewBag.Title = Model.Titulo;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Salvar", "Faixas"))
+{
+    @Html.HiddenFor(m => m.Faixa.ID)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Faixa.Nome)
+        @Html.TextBoxFor(m => m.Faixa.Nome, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Faixa.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Faixa.Descricao)
+        @Html.TextBoxFor(m => m.Faixa.Descricao, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Faixa.Descricao)
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

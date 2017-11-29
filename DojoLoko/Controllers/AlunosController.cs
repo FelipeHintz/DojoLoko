@@ -25,13 +25,14 @@ namespace DojoLoko.Controllers
 
 		public ActionResult Index()
 		{
+            var alunos = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).ToList();
+            if (User.IsInRole("CanManageCustomers"))
+                return View(alunos);
+            return View("ReadOnlyIndex", alunos);
+        }
 
-			var alunos = _context.Aluno.ToList();
-
-			return View(alunos);
-		}
-
-		public ActionResult Detalhes(int id)
+        [Authorize(Roles = "CanManageCustomers")]
+        public ActionResult Detalhes(int id)
 		{
 			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
 
@@ -42,7 +43,8 @@ namespace DojoLoko.Controllers
 
 		}
 
-		public ActionResult Editar(int id)
+        [Authorize(Roles = "CanManageCustomers")]
+        public ActionResult Editar(int id)
 		{
 			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
 
@@ -59,6 +61,7 @@ namespace DojoLoko.Controllers
 			return View("Editar", viewModel);
 		}
 
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Deletar(int id)
         {
             var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
@@ -73,9 +76,9 @@ namespace DojoLoko.Controllers
         }
 
         [HttpPost] // só será acessada com POST
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Salvar(Aluno aluno) // recebemos um cliente
         {
-            Response.Write("<script>alert('" + ModelState.IsValid + "')</script>");
             if (!ModelState.IsValid)
             {
                 var viewModel = new AlunoEditarViewModel
@@ -103,6 +106,7 @@ namespace DojoLoko.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Novo()
         {
 
