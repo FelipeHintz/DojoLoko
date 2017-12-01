@@ -14,6 +14,7 @@ namespace DojoLoko.Models
         public DbSet<Aluno> Aluno { get; set; }
         public DbSet<Faixa> Faixa { get; set; }
         public DbSet<TipoDeAssociacao> TipodeAssociacao { get; set; }
+        public DbSet<Aula> Aula { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection")
         {

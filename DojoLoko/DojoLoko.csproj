@@ -216,8 +216,13 @@
     <Compile Include="Migrations\201711292130257_createUsers.Designer.cs">
       <DependentUpon>201711292130257_createUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712012253401_updateModels.cs" />
+    <Compile Include="Migrations\201712012253401_updateModels.Designer.cs">
+      <DependentUpon>201712012253401_updateModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Aula.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Faixa.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -335,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711292130257_createUsers.resx">
       <DependentUpon>201711292130257_createUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712012253401_updateModels.resx">
+      <DependentUpon>201712012253401_updateModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

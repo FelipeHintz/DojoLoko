@@ -34,5 +34,9 @@ namespace DojoLoko.Models
         [StringLength(255)]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
+        public IEnumerable<Aula> Aulas { get; set; }
+        [Required]
+        [Range(1, 99)]
+        public IEnumerable<int> AulasId { get; set; }
     }
 }
