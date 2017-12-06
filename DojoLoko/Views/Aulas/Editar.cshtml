@@ -1,0 +1,55 @@
+﻿@model DojoLoko.ViewModels.AulaEditarViewModel
+@{
+    ViewBag.Title = Model.Titulo;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Salvar", "Aulas"))
+{
+    @Html.HiddenFor(m => m.Aula.ID)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Aula.Data)
+        @Html.TextBoxFor(m => m.Aula.Data, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.Aula.Data)
+    </div>
+    <div id="AulaAlunosTable">
+        <table class="table table-bordered table-hover" id="tabela">
+            <thead>
+                <tr>
+                    <th>Alunos</th>
+                    <th style="text-align: center">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="lineClone">
+                    <td>
+                        <div class="form-group">
+                            @Html.DropDownListFor(m => m.Aula.AlunosId, new SelectList(Model.Aluno, "ID", "Nome"), "Escolha", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Aula.Alunos)
+                        </div>
+                    </td>
+                    <td><button data-AulaAlunos-id="@Model.Aula.ID" class="btn btn-danger js-delete">Remover</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary btnClone">Adicionar Linha</button>
+    </div>
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(".btnClone").click(function () {
+            $("#lineClone").clone().appendTo("#tabela");
+        });
+        $("#tabela").on("click", ".js-delete",
+            function () {
+                var button = $(this);
+                button.parents("tr").remove();
+            });
+    </script>
+}

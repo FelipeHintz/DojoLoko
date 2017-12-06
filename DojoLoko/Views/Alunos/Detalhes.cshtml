@@ -17,6 +17,16 @@
             <p><span style="color: #317eac;">CPF:</span> @Model.Senha</p>
             <p><span style="color: #317eac;">Faixa:</span> @Model.Faixa.Nome</p>
             <p><span style="color: #317eac;">Tipo de associação:</span> @Model.TipoDeAssociacao.Nome</p>
+            <p><span style="color: #317eac;">Aulas:</span></p>
+            <ul>
+                @foreach (var aula in Model.Aulas)
+                {
+                    <li>
+                        <span style="color: #317eac;">ID:</span> @aula.ID<br />
+                        <span style="color: #317eac;">Data:</span> @aula.Data
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </div>

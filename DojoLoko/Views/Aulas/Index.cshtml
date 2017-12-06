@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DojoLoko.Models.Aula>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Aulas</h2></center>
+
+@if (@Model.Any())
+{
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var aula in Model)
+            {
+               <tr>
+                   <td style="vertical-align: middle;">
+                       @aula.ID
+                   </td>
+                   <td style="vertical-align: middle;">
+                        <a class="" href="/Aulas/Detalhes/@aula.ID" style="width: 100%">@aula.Data</a>
+                   </td>
+                   <td class="col-md-2" style="vertical-align: middle;">
+                       <a class="btn btn-primary" href="/Aulas/Editar/@aula.ID" style="width: 100%">Editar</a>
+                   </td>
+                   <td class="col-md-2" style="vertical-align: middle;">
+                       <a class="btn btn-primary" href="/Aulas/Deletar/@aula.ID" style="width: 100%">Deletar</a>
+                   </td>
+               </tr>                    
+            }
+            </tbody>
+    </table>
+    @Html.ActionLink("Nova aula", "Novo", null, new { @class = "btn btn-primary"})
+}
+else
+{
+    <p>Não temos nenhuma aula cadastrado</p>
+    <br />
+    <br />
+    @Html.ActionLink("Cadastrar", "Novo", null, new { @class = "btn btn-primary"})
+}

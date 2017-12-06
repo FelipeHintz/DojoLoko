@@ -14,6 +14,8 @@ namespace DojoLoko.ViewModels
 
         public IEnumerable<TipoDeAssociacao> TipoDeAssociacao { get; set; }
 
+        public ICollection<Aula> Aula { get; set; }
+
         public String Titulo
         {
             get

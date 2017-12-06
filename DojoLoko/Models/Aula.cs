@@ -9,11 +9,13 @@ namespace DojoLoko.Models
 
     public class Aula
     {
+        public Aula()
+        {
+            this.Alunos = new HashSet<Aluno>();
+        }
         public int ID { get; set; }
-        public IEnumerable<Aluno> Alunos { get; set; }
-        [Required]
-        [Range(1, 99)]
-        public IEnumerable<int> AlunosId { get; set; }
-        public DateTime data { get; set; }
+        public ICollection<Aluno> Alunos { get; set; }
+        public ICollection<int> AlunosId { get; set; }
+        public DateTime Data { get; set; }
     }
 }

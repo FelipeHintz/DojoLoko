@@ -1,0 +1,27 @@
+﻿@model DojoLoko.Models.Aula
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>Aula @Model.Data</h2>
+    <p>Informações da aula:</p>
+    <div class="row">
+        <div class="col-sm-12">
+            <p><span style="color: #317eac;">ID:</span> @Model.ID</p>
+            <p><span style="color: #317eac;">Data:</span> @Model.Data</p>
+            <p><span style="color: #317eac;">Lista de alunos:</span></p>
+            <ul>
+                @foreach (var aula in Model.Alunos)
+                {
+                    <li>
+                        <span style="color: #317eac;">ID:</span> @aula.ID<br />
+                        <span style="color: #317eac;">Nome:</span> @aula.Nome
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

@@ -34,7 +34,7 @@ namespace DojoLoko.Controllers
         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Detalhes(int id)
 		{
-			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
+			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).Include(c => c.Aulas).SingleOrDefault(c => c.ID == id);
 
 			if (aluno == null)
 				return HttpNotFound();
@@ -46,7 +46,7 @@ namespace DojoLoko.Controllers
         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Editar(int id)
 		{
-			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
+			var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).Include(c => c.Aulas).SingleOrDefault(c => c.ID == id);
 
 			if (aluno == null)
 				return HttpNotFound();
@@ -55,8 +55,9 @@ namespace DojoLoko.Controllers
 			{
                 Aluno = aluno,
                 Faixa = _context.Faixa.ToList(),
-                TipoDeAssociacao = _context.TipodeAssociacao.ToList()
-			};
+                TipoDeAssociacao = _context.TipodeAssociacao.ToList(),
+                Aula = _context.Aula.ToList()
+            };
 
 			return View("Editar", viewModel);
 		}
@@ -64,7 +65,7 @@ namespace DojoLoko.Controllers
         [Authorize(Roles = "CanManageCustomers")]
         public ActionResult Deletar(int id)
         {
-            var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).SingleOrDefault(c => c.ID == id);
+            var aluno = _context.Aluno.Include(c => c.Faixa).Include(c => c.TipoDeAssociacao).Include(c => c.Aulas).SingleOrDefault(c => c.ID == id);
 
             if (aluno == null)
                 return HttpNotFound();
@@ -85,7 +86,8 @@ namespace DojoLoko.Controllers
                 {
                     Aluno = aluno,
                     Faixa = _context.Faixa.ToList(),
-                    TipoDeAssociacao = _context.TipodeAssociacao.ToList()
+                    TipoDeAssociacao = _context.TipodeAssociacao.ToList(),
+                    Aula = _context.Aula.ToList()
                 };
                 return View("Editar", viewModel);
             }
@@ -94,12 +96,13 @@ namespace DojoLoko.Controllers
                 _context.Aluno.Add(aluno);
             else
             {
-                var customerInDb = _context.Aluno.Single(c => c.ID == aluno.ID);
+                var customerInDb = _context.Aluno.Include(m => m.Aulas).Single(c => c.ID == aluno.ID);
 
                 customerInDb.Nome = aluno.Nome;
                 customerInDb.CPF = aluno.CPF;
                 customerInDb.TipodeAssociacaoId = aluno.TipodeAssociacaoId;
                 customerInDb.FaixaId = aluno.FaixaId;
+                customerInDb.Aulas = aluno.Aulas;
             }
             _context.SaveChanges();
 
@@ -114,7 +117,8 @@ namespace DojoLoko.Controllers
             { 
                 Aluno = new Aluno(),
                 Faixa = _context.Faixa.ToList(),
-                TipoDeAssociacao = _context.TipodeAssociacao.ToList()
+                TipoDeAssociacao = _context.TipodeAssociacao.ToList(),
+                Aula = _context.Aula.ToList()
             };
             return View("Editar", viewModel);
 

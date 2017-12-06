@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AulasController.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\FaixasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -220,6 +221,22 @@
     <Compile Include="Migrations\201712012253401_updateModels.Designer.cs">
       <DependentUpon>201712012253401_updateModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712052059562_teste.cs" />
+    <Compile Include="Migrations\201712052059562_teste.Designer.cs">
+      <DependentUpon>201712052059562_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052140032_teste123.cs" />
+    <Compile Include="Migrations\201712052140032_teste123.Designer.cs">
+      <DependentUpon>201712052140032_teste123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052233348_teste123123.cs" />
+    <Compile Include="Migrations\201712052233348_teste123123.Designer.cs">
+      <DependentUpon>201712052233348_teste123123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712052312212_tehayuihd1231.cs" />
+    <Compile Include="Migrations\201712052312212_tehayuihd1231.Designer.cs">
+      <DependentUpon>201712052312212_tehayuihd1231.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aula.cs" />
@@ -229,6 +246,8 @@
     <Compile Include="Models\TipoDeAssociacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AulaEditarViewModel.cs" />
+    <Compile Include="ViewModels\AulaIndexViewModel.cs" />
     <Compile Include="ViewModels\TipodeAssociacaoEditarViewModel .cs" />
     <Compile Include="ViewModels\FaixaEditarViewModel.cs" />
     <Compile Include="ViewModels\AlunoIndexViewModel .cs" />
@@ -293,6 +312,10 @@
     <Content Include="Views\Alunos\ReadOnlyIndex.cshtml" />
     <Content Include="Views\Faixas\ReadOnlyIndex.cshtml" />
     <Content Include="Views\TipoDeAssociacoes\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Aulas\Detalhes.cshtml" />
+    <Content Include="Views\Aulas\Editar.cshtml" />
+    <Content Include="Views\Aulas\Index.cshtml" />
+    <Content Include="Views\Aulas\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -343,6 +366,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712012253401_updateModels.resx">
       <DependentUpon>201712012253401_updateModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052059562_teste.resx">
+      <DependentUpon>201712052059562_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052140032_teste123.resx">
+      <DependentUpon>201712052140032_teste123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052233348_teste123123.resx">
+      <DependentUpon>201712052233348_teste123123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712052312212_tehayuihd1231.resx">
+      <DependentUpon>201712052312212_tehayuihd1231.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

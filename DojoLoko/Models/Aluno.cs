@@ -9,6 +9,10 @@ namespace DojoLoko.Models
 
     public class Aluno
     {
+        public Aluno()
+        {
+            this.Aulas = new HashSet<Aula>();
+        }
         public int ID { get; set; }
         public Faixa Faixa { get; set; }
         [Required]
@@ -34,9 +38,7 @@ namespace DojoLoko.Models
         [StringLength(255)]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
-        public IEnumerable<Aula> Aulas { get; set; }
-        [Required]
-        [Range(1, 99)]
-        public IEnumerable<int> AulasId { get; set; }
+        public ICollection<Aula> Aulas { get; set; }
+        public ICollection<int> AulasId { get; set; }
     }
 }

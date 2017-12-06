@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DojoLoko.Models.Aula>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>Aulas</h2></center>
+
+@if (@Model.Any())
+{
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var aula in Model)
+            {
+               <tr>
+                   <td style="vertical-align: middle;">
+                        @aula.ID
+                   </td>
+                   <td style="vertical-align: middle;">
+                       @aula.Data
+                   </td>
+               </tr>                    
+            }
+            </tbody>
+    </table>
+}
+else
+{
+    <p>Não temos nenhum aluno cadastrado</p>
+}

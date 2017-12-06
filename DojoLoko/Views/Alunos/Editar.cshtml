@@ -37,5 +37,44 @@
         @Html.DropDownListFor(m => m.Aluno.TipodeAssociacaoId, new SelectList(Model.TipoDeAssociacao, "ID", "Nome"), "Selecione um tipo de associação", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Aluno.TipodeAssociacaoId)
     </div>
+    <div id="AulaAlunosTable">
+        <table class="table table-bordered table-hover" id="tabela">
+            <thead>
+                <tr>
+                    <th>Aulas</th>
+                    <th style="text-align: center">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="lineClone">
+                    <td>
+                        <div class="form-group">
+                            @Html.DropDownListFor(m => m.Aluno.AulasId, new SelectList(Model.Aula, "ID", "Data"), "Escolha", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Aluno.Aulas)
+                        </div>
+                    </td>
+                    <td><button data-AulaAlunos-id="@Model.Aluno.ID" class="btn btn-danger js-delete">Remover</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary btnClone">Adicionar Linha</button>
+    </div>
+    <br /><br />
     <button type="submit" class="btn btn-primary">Salvar</button>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(".btnClone").click(function () {
+            $("#lineClone").clone().appendTo("#tabela");
+        });
+        $("#tabela").on("click", ".js-delete",
+            function () {
+                var button = $(this);
+                button.parents("tr").remove();
+            });
+    </script>
 }
