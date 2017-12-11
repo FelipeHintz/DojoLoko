@@ -316,6 +316,7 @@
     <Content Include="Views\Aulas\Editar.cshtml" />
     <Content Include="Views\Aulas\Index.cshtml" />
     <Content Include="Views\Aulas\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\TipoDeAssociacoes\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

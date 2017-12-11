@@ -1,0 +1,26 @@
+﻿@model DojoLoko.ViewModels.TipodeAssociacaoEditarViewModel
+@{
+    ViewBag.Title = Model.Titulo;
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Salvar", "TipoDeAssociacoes"))
+{
+    @Html.HiddenFor(m => m.TipodeAssociacao.ID)
+    <div class="form-group">
+        @Html.LabelFor(m => m.TipodeAssociacao.Nome)
+        @Html.TextBoxFor(m => m.TipodeAssociacao.Nome, new { @class = "form-control" })
+		@Html.ValidationMessageFor(m => m.TipodeAssociacao.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TipodeAssociacao.Periodo)
+        @Html.TextBoxFor(m => m.TipodeAssociacao.Periodo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TipodeAssociacao.Periodo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TipodeAssociacao.Mensalidade)
+        @Html.TextBoxFor(m => m.TipodeAssociacao.Mensalidade, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TipodeAssociacao.Mensalidade)
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

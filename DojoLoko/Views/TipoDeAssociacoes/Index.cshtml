@@ -15,19 +15,19 @@
             {
                 <tr>
                     <td style="vertical-align: middle;">
-                        @Html.ActionLink(@associacao.Nome, "Detalhes", new { associacao.ID })
+                        <a href="/TipoDeAssociacoes/Detalhes/@associacao.ID" style="width: 100%">@associacao.Nome</a>
                     </td>
                     <td style="vertical-align: middle;">
-                        <a class="btn btn-primary" href="/Faixas/Detalhes/@associacao.ID" style="width: 100%">@associacao.Periodo</a>
+                        <a href="/TipoDeAssociacoes/Detalhes/@associacao.ID" style="width: 100%">@associacao.Periodo</a>
                     </td>
                     <td style="vertical-align: middle;">
-                        <a class="btn btn-primary" href="/Faixas/Detalhes/@associacao.ID" style="width: 100%">@associacao.Mensalidade</a>
+                        <a href="/TipoDeAssociacoes/Detalhes/@associacao.ID" style="width: 100%">@associacao.Mensalidade</a>
                     </td>
                     <td class="col-md-2" style="vertical-align: middle;">
-                        <a class="btn btn-primary" href="/Faixas/Editar/@associacao.ID" style="width: 100%">Editar</a>
+                        <a class="btn btn-primary" href="/TipoDeAssociacoes/Editar/@associacao.ID" style="width: 100%">Editar</a>
                     </td>
                     <td class="col-md-2" style="vertical-align: middle;">
-                        <a class="btn btn-primary" href="/Faixas/Deletar/@associacao.ID" style="width: 100%">Deletar</a>
+                        <a class="btn btn-primary" href="/TipoDeAssociacoes/Deletar/@associacao.ID" style="width: 100%">Deletar</a>
                     </td>
                 </tr>
             }
